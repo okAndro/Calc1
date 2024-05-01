@@ -4,23 +4,17 @@ import java.util.regex.Pattern;
 
 public class test {
     public static void main(String[] args) {
-        // Создаем экземпляр Scanner для чтения входных данных от пользователя
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите арифметическое выражение (например, '1 + 2'):");
 
         String input = scanner.nextLine();
 
         try {
-            // Пытаемся проверить и вычислить введенное выражение
             checkAndCalculate(input);
         } catch (Exception e) {
-            // Выводим сообщение об ошибке и завершаем работу
             System.out.println(e.getMessage());
-            scanner.close(); // не забываем закрыть Scanner
-            return; // или можно использовать System.exit(0), если хотите немедленно завершить программу
+            System.exit(0);
         }
-
-        scanner.close(); // не забываем закрыть Scanner
     }
 
     // Метод для проверки и вычисления арифметического выражения
